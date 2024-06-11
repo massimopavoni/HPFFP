@@ -1,0 +1,5 @@
+name: HPFFP
+version: 1.0
+
+dependencies:
+  - base
