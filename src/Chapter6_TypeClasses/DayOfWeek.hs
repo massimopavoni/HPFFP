@@ -1,3 +1,5 @@
+{-# LANGUAGE InstanceSigs #-}
+
 module Chapter6_TypeClasses.DayOfWeek where
 
 data DayOfWeek = Mon | Tue | Wed | Thu | Fri | Sat | Sun

@@ -1,3 +1,5 @@
+{-# LANGUAGE InstanceSigs #-}
+
 module Chapter6_TypeClasses.EqInstances where
 
 newtype TisAnInteger
@@ -27,8 +29,8 @@ instance Eq StringOrInt where
 data Pair a
   = Pair a a
 
-instance Eq a => Eq (Pair a) where
-  (==) :: Eq a => Pair a -> Pair a -> Bool
+instance (Eq a) => Eq (Pair a) where
+  (==) :: (Eq a) => Pair a -> Pair a -> Bool
   (==) (Pair x y) (Pair x' y') = x == x' && y == y'
 
 data Tuple a b
@@ -42,8 +44,8 @@ data Which a
   = ThisOne a
   | ThatOne a
 
-instance Eq a => Eq (Which a) where
-  (==) :: Eq a => Which a -> Which a -> Bool
+instance (Eq a) => Eq (Which a) where
+  (==) :: (Eq a) => Which a -> Which a -> Bool
   (==) (ThisOne x) (ThisOne x') = x == x'
   (==) (ThatOne x) (ThatOne x') = x == x'
   (==) _ _ = False

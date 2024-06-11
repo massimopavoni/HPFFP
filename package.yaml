@@ -1,5 +1,8 @@
 name: HPFFP
 version: 1.0
 
-dependencies:
-  - base
+library:
+  source-dirs: src
+  dependencies:
+    - base
+    - time

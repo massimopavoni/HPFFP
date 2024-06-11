@@ -1,3 +1,5 @@
+{-# LANGUAGE InstanceSigs #-}
+
 module Chapter11_AlgebraicDatatypes.Programmer where
 
 data OperatingSystem

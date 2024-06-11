@@ -1,3 +1,5 @@
+{-# LANGUAGE InstanceSigs #-}
+
 module Chapter6_TypeClasses.Trivial where
 
 data Trivial = Trivial'

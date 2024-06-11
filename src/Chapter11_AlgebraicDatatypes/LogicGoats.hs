@@ -1,3 +1,6 @@
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE InstanceSigs #-}
+
 module Chapter11_AlgebraicDatatypes.LogicGoats where
 
 class TooMany a where
