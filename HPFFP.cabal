@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.36.0.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -16,8 +16,13 @@ library
       Chapter10_FoldingLists.RewriteFunctionsUsingFold
       Chapter10_FoldingLists.Scans
       Chapter10_FoldingLists.WarmUpAndReview
+      Chapter11_AlgebraicDatatypes.AsPatterns
+      Chapter11_AlgebraicDatatypes.BinaryTree
+      Chapter11_AlgebraicDatatypes.Ciphers
       Chapter11_AlgebraicDatatypes.Garden
+      Chapter11_AlgebraicDatatypes.HuttonsRazor
       Chapter11_AlgebraicDatatypes.LogicGoats
+      Chapter11_AlgebraicDatatypes.PhoneExercise
       Chapter11_AlgebraicDatatypes.Programmer
       Chapter11_AlgebraicDatatypes.RecordSyntax
       Chapter11_AlgebraicDatatypes.Vehicles
@@ -76,5 +81,6 @@ library
       src
   build-depends:
       base
+    , safe
     , time
   default-language: Haskell2010
