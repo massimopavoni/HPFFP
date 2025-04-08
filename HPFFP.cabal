@@ -26,6 +26,13 @@ library
       Chapter11_AlgebraicDatatypes.Programmer
       Chapter11_AlgebraicDatatypes.RecordSyntax
       Chapter11_AlgebraicDatatypes.Vehicles
+      Chapter12_SignalingAdversity.BinaryTree
+      Chapter12_SignalingAdversity.IterateUnfoldr
+      Chapter12_SignalingAdversity.ItsOnlyNatural
+      Chapter12_SignalingAdversity.SmallLibraryForEither
+      Chapter12_SignalingAdversity.SmallLibraryForMaybe
+      Chapter12_SignalingAdversity.StringProcessing
+      Chapter12_SignalingAdversity.ValidateTheWord
       Chapter2_HelloHaskell.Learn
       Chapter2_HelloHaskell.LetToWhere
       Chapter2_HelloHaskell.Test
@@ -79,8 +86,11 @@ library
       Paths_HPFFP
   hs-source-dirs:
       src
+  ghc-options: -Wall -Werror
   build-depends:
       base
+    , extra
+    , ghc
     , safe
     , time
   default-language: Haskell2010

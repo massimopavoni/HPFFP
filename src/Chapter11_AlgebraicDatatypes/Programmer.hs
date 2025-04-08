@@ -16,10 +16,7 @@ data ProgLang
   | PureScript
   deriving (Bounded, Enum, Eq, Show)
 
-data Programmer = Programmer
-  { os :: OperatingSystem,
-    lang :: ProgLang
-  }
+data Programmer = Programmer OperatingSystem ProgLang
   deriving (Bounded, Eq, Show)
 
 instance Enum Programmer where
@@ -28,22 +25,27 @@ instance Enum Programmer where
     if prog == maxBound
       then error "Programmer out of bounds"
       else toEnum (fromEnum prog + 1)
+
   pred :: Programmer -> Programmer
   pred prog =
     if prog == minBound
       then error "Programmer out of bounds"
       else toEnum (fromEnum prog + 1)
+
   fromEnum :: Programmer -> Int
   fromEnum (Programmer os lang) = fromEnum os * (fromEnum (maxBound :: ProgLang) + 1) + fromEnum lang
+
   toEnum :: Int -> Programmer
   toEnum n =
     if n < 0 || n > fromEnum (maxBound :: Programmer)
       then error "Programmer out of bounds"
-      else Programmer {os = toEnum os, lang = toEnum lang}
+      else Programmer (toEnum os) (toEnum lang)
     where
       (os, lang) = n `divMod` (fromEnum (maxBound :: ProgLang) + 1)
+
   enumFrom :: Programmer -> [Programmer]
   enumFrom x = enumFromTo x maxBound
+
   enumFromThen :: Programmer -> Programmer -> [Programmer]
   enumFromThen x y = enumFromThenTo x y bound
     where
