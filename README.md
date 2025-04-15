@@ -12,3 +12,5 @@ Going through [Haskell Programming From First Principles](https://haskellbook.co
 - [Chapter 9, Lists](src/Chapter9_Lists/)
 - [Chapter 10, Folding Lists](src/Chapter10_FoldingLists/)
 - [Chapter 11, Algebraic Datatypes](src/Chapter11_AlgebraicDatatypes/)
+- [Chapter 12, Signaling Adversity](src/Chapter12_SignalingAdversity/)
+- [Chapter 13, Building Projects](src/Chapter13_BuildingProjects/)

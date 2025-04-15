@@ -1,5 +1,7 @@
 module Chapter3_Strings.BuildingFunctions where
 
+import Safe (tailErr)
+
 add :: [a] -> [a] -> [a]
 add = (++)
 
@@ -12,8 +14,8 @@ rest = drop
 -- Meme
 rest' :: (Eq t, Num t) => [a] -> t -> [a]
 rest' s n
-  | n == 1 = tail s
-  | otherwise = rest' (tail s) (n - 1)
+  | n == 1 = tailErr s
+  | otherwise = rest' (tailErr s) (n - 1)
 
 thirdLetter :: [a] -> a
 thirdLetter s = s !! 2

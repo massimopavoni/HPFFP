@@ -1,6 +1,7 @@
 module Chapter9_Lists.DataChar where
 
 import Data.Char (isUpper, toUpper)
+import Safe (headErr)
 
 onlyUps :: String -> String
 onlyUps = filter isUpper
@@ -13,4 +14,4 @@ capitalizeAll :: String -> String
 capitalizeAll = map toUpper
 
 capitalizeHead :: String -> Char
-capitalizeHead = toUpper . head
+capitalizeHead = toUpper . headErr

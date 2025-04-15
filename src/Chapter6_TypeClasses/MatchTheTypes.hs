@@ -1,29 +1,30 @@
 module Chapter6_TypeClasses.MatchTheTypes where
 
 import Data.List (sort)
+import Safe (headErr)
 
-i :: Num a => a
+i :: (Num a) => a
 i = 1
 
-i' :: Num a => a
+i' :: (Num a) => a
 i' = 1
 
 f :: Float
 f = 1.0
 
-f' :: Fractional a => a
+f' :: (Fractional a) => a
 f' = 1.0
 
-f'' :: Fractional a => a
+f'' :: (Fractional a) => a
 f'' = 1.0
 
-f''' :: RealFrac a => a
+f''' :: (RealFrac a) => a
 f''' = 1.0
 
 freud :: a -> a
 freud x = x
 
-freud' :: Ord a => a -> a
+freud' :: (Ord a) => a -> a
 freud' x = x
 
 freud'' :: Int -> Int
@@ -41,7 +42,7 @@ sigmund' _ = myX
 sigmund'' :: Int -> Int
 sigmund'' _ = myX
 
-jung :: Ord a => [a] -> a
+jung :: (Ord a) => [a] -> a
 jung = minimum
 
 jung' :: [Int] -> Int
@@ -50,14 +51,14 @@ jung' = minimum
 young :: [Char] -> Char
 young = minimum
 
-young' :: Ord a => [a] -> a
+young' :: (Ord a) => [a] -> a
 young' = minimum
 
 mySort :: [Char] -> [Char]
 mySort = sort
 
 signifier :: [Char] -> Char
-signifier xs = head (mySort xs)
+signifier xs = headErr (mySort xs)
 
 signifier' :: [Char] -> Char
-signifier' xs = head (mySort xs)
+signifier' xs = headErr (mySort xs)
